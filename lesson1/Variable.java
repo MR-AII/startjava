@@ -6,7 +6,7 @@ public class Variable {
 		long turboFrequency = 4200;
 		float sizeRam = 12.0f;
 		double useSizeRam = 4.8d;
-		char modelRAM = 'H';
+		char modelRam = 'H';
 		boolean gameComputer = true;
 
 		System.out.println(processorCore);
