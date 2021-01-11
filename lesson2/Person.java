@@ -1,4 +1,4 @@
-Public class Person {
+public class Person {
 	
 	String gender = "male";
 	String name = "Alan";
@@ -8,7 +8,7 @@ Public class Person {
 	void go() {
 	}
 
-	void sitDown() {
+	void sit() {
 	}
 
 	void run() {

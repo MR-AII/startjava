@@ -10,7 +10,7 @@ public class Wolf {
 		System.out.println("Wolf going");
 	}
 
-	void sitDown() {
+	void sit() {
 		System.out.println("Wolf sit down");
 	}
 
@@ -22,7 +22,7 @@ public class Wolf {
 		System.out.println("Wolf howling");
 	}
 
-	void hunts() {
+	void hunt() {
 		System.out.println("Wolf hunting");
 	}
 }
