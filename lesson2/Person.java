@@ -1,4 +1,5 @@
 Public class Person {
+	
 	String gender = "male";
 	String name = "Alan";
 	float height = 179.3f;
@@ -18,5 +19,4 @@ Public class Person {
 
 	void learnJava() {
 	}
-
 }
