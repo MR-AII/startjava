@@ -5,7 +5,7 @@ public class WolfTest {
 		wolfOne.setGender("male");
 		wolfOne.setNickname("Yashi");
 		wolfOne.setWeight(23.5f) ;
-		wolfOne.setAge(10);
+		wolfOne.setAge(11);
 		wolfOne.setColor("grey");
 
 		System.out.println("nickname = " + wolfOne.getNickname());
