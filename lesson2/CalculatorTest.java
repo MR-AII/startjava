@@ -4,9 +4,9 @@ public class CalculatorTest {
 	
 	public static void main(String[] args) {
 		Scanner scanner = null; 
-		boolean stop = false;
+		String reply = "yes";
 
-		while(!stop) {
+		while(reply.equals("yes")) {
 			Calculator calc = new Calculator();
 
 			scanner = new Scanner(System.in);
@@ -19,17 +19,13 @@ public class CalculatorTest {
 			System.out.println("Введите второе число: ");
 			calc.setSecondNum(scanner.nextInt());
 
-			calc.resultCalculation();
+			calc.Calculate();
 
-			while(!stop) {
+			while(reply.equals("yes")) {
 				System.out.println("Хотите продолжить вычисления? [yes/no]");
 				scanner = new Scanner(System.in);
-				String change = scanner.nextLine();
-				if (change.equals("no")) {
-					stop = true;
-				} else if (change.equals("yes")) {
-					break;
-				}
+				reply = scanner.nextLine();
+				break;
 			}
 		}
 		scanner.close();
