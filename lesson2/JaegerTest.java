@@ -1,7 +1,6 @@
 public class JaegerTest {
 
 	public static void main(String[] args) {
-
 		Jaeger j1 = new Jaeger();
 		j1.setModelName("Crimson Typhoon");
 		j1.setMark("Mark-4");
@@ -13,7 +12,6 @@ public class JaegerTest {
 		j1.setArmor(6);
 		System.out.println("Егерь =: " + j1.getModelName() + "\n" + "Марка =: " + j1.getMark() + "\n" + "Состояние дрифт =: " + j1.drift() + "\n");
 		
-
 		Jaeger j2 = new Jaeger();
 		j2.setModelName("Cayote Tango");
 		j2.setMark("Mark-1");

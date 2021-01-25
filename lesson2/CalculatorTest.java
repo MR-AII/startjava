@@ -19,12 +19,15 @@ public class CalculatorTest {
 			System.out.println("Введите второе число: ");
 			calc.setSecondNum(scanner.nextInt());
 
-			calc.Calculate();
+			System.out.println("Результат вычисления = " + calc.calculate());
 
-			while(reply.equals("yes")) {
+			while(!reply.equals("no")) {
 				System.out.println("Хотите продолжить вычисления? [yes/no]");
 				scanner = new Scanner(System.in);
 				reply = scanner.nextLine();
+				if (!(reply.equals("yes") | reply.equals("no"))) {
+					continue;
+				}
 				break;
 			}
 		}

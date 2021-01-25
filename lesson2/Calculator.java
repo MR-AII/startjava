@@ -16,32 +16,25 @@ public class Calculator {
 		this.mathOper = mathOper;
 	}
 
-	public int Calculate() {
-		int result = 0;
+	public int calculate() {
 		switch(mathOper) {
 			case '+':
-				result = firstNum + secondNum;
-				break;
+				return firstNum + secondNum;
 			case '-':
-				result = firstNum - secondNum;
-				break;
+				return firstNum - secondNum;
 			case '*':
-				result = firstNum * secondNum;
-				break;
-			case '/': 
-				result = firstNum / secondNum;
-				break;
+				return firstNum * secondNum;
+			case '/':
+				return firstNum / secondNum;
 			case '^':
-				result  = 1;
+				int result  = 1;
 				for (int i = 0; i < secondNum; i++) {
 					result *= firstNum;
 				}
-				break;
+				return result;
 			case '%':
-				result = firstNum % secondNum;
-				break;
+				return firstNum % secondNum;
 		}
-		System.out.println("Результат вычисления = " + result);
-		return result;
+		return 0;
 	}	
 }
