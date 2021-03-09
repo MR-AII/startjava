@@ -28,7 +28,7 @@ public class GuessNumber {
 			} else if (secondPlayer.getAnswer() == guessNum) {
 				System.out.println(secondPlayer.getName() + " угадал загаданное число " + guessNum);
 			} else {
-				System.out.println("никто не угадал. Загаданное число было: " + guessNum);
+				System.out.println("Ни один игрок не угадал. Загаданное число: " + guessNum);
 			}
 			break;
 		}
