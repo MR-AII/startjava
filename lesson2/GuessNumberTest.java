@@ -7,8 +7,8 @@ public class GuessNumberTest {
 
 		while(reply.equals("yes")) {
 			Scanner scanner = new Scanner(System.in);
-			GuessNumber guessNumber = new GuessNumber();
-			guessNumber.start();
+			GuessNumber game = new GuessNumber();
+			game.start();
 			
 			do {			
 				System.out.println("Хотите продолжить игру? [yes/no]");

@@ -3,12 +3,12 @@ import java.util.Scanner;
 public class GuessNumber {
 
 	Scanner scanner = new Scanner(System.in);
-	Player firstPlayer;
-	Player secondPlayer;
-	String reply = "yes";
+	private Player firstPlayer;
+	private Player secondPlayer;
+	private String reply = "yes";
 
 	public void start() {
-		int guessNum = (int) (Math.random() * 100);
+		int guessNum = (int) (Math.random() * 101);
 
 		System.out.println("Введите имя первого игрока: ");
 		firstPlayer = new Player(scanner.nextLine());
@@ -33,5 +33,4 @@ public class GuessNumber {
 			break;
 		}
 	}
-
 }
