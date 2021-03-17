@@ -1,7 +1,7 @@
 public class Player {
 
 	private String name;
-	private int answer;
+	private int number;
 
 	public Player(String name) {
 		this.name = name;
@@ -11,11 +11,11 @@ public class Player {
 		return name;
 	}
 
-	public int getAnswer() {
-		return answer;
+	public int getNumber() {
+		return number;
 	}
 
-	public void setAnswer(int answer) {
-		this.answer = answer;
+	public void setNumber(int number) {
+		this.number = number;
 	}
 }
