@@ -1,3 +1,5 @@
+package com.startjava.lesson1;
+
 public class Variable {
 	public static void main(String[] args) {
 		byte processorCore = 8;
@@ -15,7 +17,7 @@ public class Variable {
 		System.out.println(turboFrequency);
 		System.out.println(sizeRam);
 		System.out.println(useSizeRam);
-		System.out.println(modelRAM);
+		System.out.println(modelRam);
 		System.out.println(gameComputer);
 	}
 }

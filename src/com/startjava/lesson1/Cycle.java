@@ -1,3 +1,5 @@
+package com.startjava.lesson1;
+
 public class Cycle {
 	public static void main(String[] args) {
 		System.out.println("Вывод всех чисел [0, 20]");
