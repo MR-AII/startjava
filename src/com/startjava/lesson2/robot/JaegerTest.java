@@ -1,4 +1,4 @@
-package com.startjava.lesson2;
+package com.startjava.lesson2.robot;
 
 public class JaegerTest {
 

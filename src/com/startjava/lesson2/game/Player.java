@@ -1,4 +1,4 @@
-package com.startjava.lesson2;
+package com.startjava.lesson2.game;
 
 public class Player {
 

@@ -1,4 +1,4 @@
-package com.startjava.lesson1;
+package com.startjava.lesson1.myapp;
 
 public class MyFirstApp {
 	public static void main(String[] args) {
