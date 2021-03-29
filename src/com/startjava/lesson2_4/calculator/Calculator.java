@@ -1,10 +1,7 @@
 package com.startjava.lesson2_4.calculator;
 
-public class Calculator { 
+public class Calculator {
 
-	private int firstNum;
-	private int secondNum;
-	private char mathOper;
 	private String mathExpession;
 
 	public Calculator(String mathExpession) {
@@ -13,26 +10,27 @@ public class Calculator {
 
 	public int calculate() {
 		String[] arrExpressions = mathExpession.split(" ");
-		firstNum = Integer.parseInt(arrExpressions[0]);
-		secondNum = Integer.parseInt(arrExpressions[2]);
-		mathOper = ;
-		switch(mathOper) {
+
+		int[] numbers = new int[2];
+		numbers[0] = Integer.parseInt(arrExpressions[0]);
+		numbers[1] = Integer.parseInt(arrExpressions[2]);
+
+		char[] mathOper = new char[1];
+		mathOper[0] = arrExpressions[1].charAt(0);
+
+		switch(mathOper[0]) {
 			case '+':
-				return firstNum + secondNum;
+				return numbers[0] + numbers[1];
 			case '-':
-				return firstNum - secondNum;
+				return numbers[0] - numbers[1];
 			case '*':
-				return firstNum * secondNum;
+				return numbers[0] * numbers[1];
 			case '/':
-				return firstNum / secondNum;
+				return numbers[0] / numbers[1];
 			case '^':
-				int result  = 1;
-				for (int i = 0; i < secondNum; i++) {
-					result *= firstNum;
-				}
-				return result;
+				return (int) Math.pow(numbers[0], numbers[1]);
 			case '%':
-				return firstNum % secondNum;
+				return numbers[0] % numbers[1];
 		}
 		return 0;
 	}	
