@@ -7,17 +7,17 @@ public class CalculatorTest {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		Calculator calc;
-		String reply = "yes";
+		String reply = "да";
 
-		while(reply.equals("yes")) {
+		while(reply.equals("да")) {
 			System.out.print("Введите математическое выражение: ");
 			calc = new Calculator(scanner.nextLine());
 			System.out.println("Результат вычисления = " + calc.calculate());
 
 			do {
-				System.out.println("Хотите продолжить вычисления? [yes/no]");
+				System.out.println("Хотите продолжить вычисления? [да/нет]");
 				reply = scanner.nextLine();
-			} while (!reply.equals("yes") && !reply.equals("no"));
+			} while (!reply.equals("да") && !reply.equals("нет"));
 		}
 		scanner.close();
 	}

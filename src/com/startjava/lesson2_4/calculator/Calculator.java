@@ -9,28 +9,21 @@ public class Calculator {
 	}
 
 	public int calculate() {
-		String[] arrExpressions = mathExpession.split(" ");
-
-		int[] numbers = new int[2];
-		numbers[0] = Integer.parseInt(arrExpressions[0]);
-		numbers[1] = Integer.parseInt(arrExpressions[2]);
-
-		char[] mathOper = new char[1];
-		mathOper[0] = arrExpressions[1].charAt(0);
-
-		switch(mathOper[0]) {
+		String[] mathExpressions = mathExpession.split(" ");
+		
+		switch(mathExpressions[1].charAt(0)) {
 			case '+':
-				return numbers[0] + numbers[1];
+				return Integer.parseInt(mathExpressions[0]) + Integer.parseInt(mathExpressions[2]);
 			case '-':
-				return numbers[0] - numbers[1];
+				return Integer.parseInt(mathExpressions[0]) - Integer.parseInt(mathExpressions[2]);
 			case '*':
-				return numbers[0] * numbers[1];
+				return Integer.parseInt(mathExpressions[0]) * Integer.parseInt(mathExpressions[2]);
 			case '/':
-				return numbers[0] / numbers[1];
+				return Integer.parseInt(mathExpressions[0]) / Integer.parseInt(mathExpressions[2]);
 			case '^':
-				return (int) Math.pow(numbers[0], numbers[1]);
+				return (int) Math.pow(Integer.parseInt(mathExpressions[0]), Integer.parseInt(mathExpressions[2]));
 			case '%':
-				return numbers[0] % numbers[1];
+				return Integer.parseInt(mathExpressions[0]) % Integer.parseInt(mathExpressions[2]);
 		}
 		return 0;
 	}	

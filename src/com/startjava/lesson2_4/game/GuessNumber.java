@@ -8,10 +8,6 @@ public class GuessNumber {
     private int randomNum = (int) (Math.random() * 101);
     private Player playerOne;
     private Player playerTwo ;
-    private int tryCountP1 = 10;
-    private int tryCountP2 = 10;
-    private int[] player1Nums = new int[10];
-    private int[] player2Nums = new int[10];
 
     public GuessNumber(Player playerOne, Player playerTwo) {
         this.playerOne = playerOne;
@@ -20,55 +16,51 @@ public class GuessNumber {
 
     public void start() {
         System.out.println(randomNum);
+
         while (true) {
+            playerOne.setTryCount(10);
+            playerTwo.setTryCount(10);
+
             for (int i = 0; i < 10; i++) {
                 System.out.print(playerOne.getName() + " введите число: ");
-                playerOne.setNumber(scanner.nextInt());
-                player1Nums[i] = playerOne.getNumber();
-                playerOne.setArraysNum(player1Nums);
-                if (playerOne.getNumber() > randomNum) {
-                    tryCountP1--;
-                    System.out.println(playerOne.getName() + " ваше число больше чем загадал компьютер. Осталось попыток: " + tryCountP1 + "\n");
-                } else if (playerOne.getNumber() < randomNum) {
-                    tryCountP1--;
-                    System.out.println(playerOne.getName() + " ваше число меньше чем загадал компьютер. Осталось попыток: " + tryCountP1 + "\n");
-                } else if (playerOne.getNumber() == randomNum) {
+                playerOne.setEnteredNums(scanner.nextInt(), i);
+                if (playerOne.getEnteredNums()[i] > randomNum) {
+                    playerOne.tryCountDecrement();
+                    System.out.println(playerOne.getName() + " ваше число больше чем загадал компьютер. Осталось попыток: " + playerOne.getTryCount() + "\n");
+                } else if (playerOne.getEnteredNums()[i] < randomNum) {
+                    playerOne.tryCountDecrement();
+                    System.out.println(playerOne.getName() + " ваше число меньше чем загадал компьютер. Осталось попыток: " + playerOne.getTryCount() + "\n");
+                } else if (playerOne.getEnteredNums()[i] == randomNum) {
                     System.out.println("Игрок: " + playerOne.getName() + " угадал число: " + randomNum + " с " + i + " попытки");
                     break;
                 }
 
                 System.out.print(playerTwo.getName() + " введите число: ");
-                playerTwo.setNumber(scanner.nextInt());
-                player2Nums[i] = playerTwo.getNumber();
-                playerTwo.setArraysNum(player2Nums);
-                if (playerTwo.getNumber() > randomNum) {
-                    tryCountP2--;
-                    System.out.println(playerTwo.getName() + " ваше число больше чем загадал компьютер. Осталось попыток: " + tryCountP2 + "\n");
-                } else if (playerTwo.getNumber() < randomNum) {
-                    tryCountP2--;
-                    System.out.println(playerTwo.getName() + " ваше число меньше чем загадал компьютер. Осталось попыток: " + tryCountP2 + "\n");
-                } else if (playerTwo.getNumber() == randomNum) {
+                playerTwo.setEnteredNums(scanner.nextInt(), i);
+                if (playerTwo.getEnteredNums()[i] > randomNum) {
+                    playerTwo.tryCountDecrement();
+                    System.out.println(playerTwo.getName() + " ваше число больше чем загадал компьютер. Осталось попыток: " + playerTwo.getTryCount() + "\n");
+                } else if (playerTwo.getEnteredNums()[i] < randomNum) {
+                    playerTwo.tryCountDecrement();
+                    System.out.println(playerTwo.getName() + " ваше число меньше чем загадал компьютер. Осталось попыток: " + playerTwo.getTryCount() + "\n");
+                } else if (playerTwo.getEnteredNums()[i] == randomNum) {
                     System.out.println("Игрок: " + playerTwo.getName() + " угадал число: " + randomNum + " с " + i + " попытки");
                     break;
                 }
             }
-
-            System.out.print("Введенные числа игрока - " + playerOne.getName() + ": ");
-            for (int player1Num : player1Nums) {
-                if (player1Num > 0) {
-                    System.out.print(player1Num + " ");
-                }
-            }
-
+            showPlayersNum(playerOne);
             System.out.println("");
-
-            System.out.print("Введенные числа игрока - " + playerTwo.getName() + ": ");
-            for (int player2Num : player2Nums) {
-                if (player2Num > 0) {
-                    System.out.print(player2Num + " ");
-                }
-            }
+            showPlayersNum(playerTwo);
             break;
+        }
+    }
+
+    public void showPlayersNum(Player player) {
+        System.out.print("Введенные числа игрока - " + player.getName() + ": ");
+        for (int i = 0; i < player.getEnteredNums().length; i++) {
+            if (player.getEnteredNums()[i] > 0) {
+                System.out.print(player.getEnteredNums()[i] + " ");
+            }
         }
     }
 }
