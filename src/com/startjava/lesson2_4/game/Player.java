@@ -17,10 +17,16 @@ public class Player {
     }
 
     public int[] getEnteredNums() {
-        return Arrays.copyOf(enteredNums, enteredNums.length);
+        int i = 0;
+        for (int nums : enteredNums) {
+            if (nums > 0) {
+                i++;
+            }
+        }
+        return Arrays.copyOf(enteredNums, i);
     }
 
-    public void setEnteredNums(int num, int index) {
+    public void setEnteredNum(int num, int index) {
         enteredNums[index] = num;
     }
 
