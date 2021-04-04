@@ -20,39 +20,27 @@ public class GuessNumber {
         playerOne.setTryCount(10);
         playerTwo.setTryCount(10);
 
-        int playerNum;
-        for (int i = 1; i <= 10; i++) {
-            System.out.print(playerOne.getName() + " введите число: ");
-            playerOne.setEnteredNum(scanner.nextInt(), i - 1);
-            playerNum = playerOne.getEnteredNums()[i - 1];
-            if (playerNum > randomNum) {
-                playerOne.tryCountDecrement();
-                printMessage1(playerOne);
-            } else if (playerNum < randomNum) {
-                playerOne.tryCountDecrement();
-                printMessage2(playerOne);
-            } else {
-                printMessage3(playerOne, i);
-                break;
-            }
-
-            System.out.print(playerTwo.getName() + " введите число: ");
-            playerTwo.setEnteredNum(scanner.nextInt(), i - 1);
-            playerNum = playerTwo.getEnteredNums()[i - 1];
-            if (playerNum > randomNum) {
-                playerTwo.tryCountDecrement();
-                printMessage1(playerTwo);
-            } else if (playerNum < randomNum) {
-                playerTwo.tryCountDecrement();
-                printMessage2(playerTwo);
-            } else {
-                printMessage3(playerTwo, i);
-                break;
-            }
+        int i;
+        for (i = 1; i <= 10; i++) {
+            showPlayerNums(playerOne, i);
+            showPlayerNums(playerTwo, i);
         }
+    }
 
-        showPlayerNums(playerOne);
-        showPlayerNums(playerTwo);
+    public void comparesNum(Player player, int i) {
+        System.out.print(playerOne.getName() + " введите число: ");
+        playerOne.setEnteredNum(scanner.nextInt(), i - 1);
+        num = playerOne.getEnteredNums(i)[i - 1];
+        if (num > randomNum) {
+            playerOne.tryCountDecrement();
+            printMessage1(playerOne);
+        } else if (num < randomNum) {
+            playerOne.tryCountDecrement();
+            printMessage2(playerOne);
+        } else {
+            printMessage3(playerOne, i);
+            break;
+        }
     }
 
     public void printMessage1(Player player) {
@@ -67,9 +55,9 @@ public class GuessNumber {
         System.out.println("Игрок: " + player.getName() + " угадал число: " + randomNum + " с " + winTry + " попытки");
     }
 
-    public void showPlayerNums(Player player) {
+    public void showPlayerNums(Player player, int i) {
         System.out.print("Введенные числа игрока - " + player.getName() + ": ");
-        for (int playerNum : player.getEnteredNums()) {
+        for (int playerNum : player.getEnteredNums(i)) {
             System.out.print(playerNum + " ");
         }
         System.out.println(" ");

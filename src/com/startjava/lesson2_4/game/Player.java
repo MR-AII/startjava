@@ -16,14 +16,8 @@ public class Player {
         return name;
     }
 
-    public int[] getEnteredNums() {
-        int i = 0;
-        for (int nums : enteredNums) {
-            if (nums > 0) {
-                i++;
-            }
-        }
-        return Arrays.copyOf(enteredNums, i);
+    public int[] getEnteredNums(int length) {
+        return Arrays.copyOf(enteredNums, length);
     }
 
     public void setEnteredNum(int num, int index) {
