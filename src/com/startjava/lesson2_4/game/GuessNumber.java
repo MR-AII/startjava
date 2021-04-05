@@ -15,32 +15,39 @@ public class GuessNumber {
     }
 
     public void start() {
-        System.out.println(randomNum);
-
         playerOne.setTryCount(10);
         playerTwo.setTryCount(10);
 
         int i;
         for (i = 1; i <= 10; i++) {
-            showPlayerNums(playerOne, i);
-            showPlayerNums(playerTwo, i);
+            if (comparesNum(playerOne, i)) {
+                printMessage3(playerOne, i);
+                break;
+            } else if (comparesNum(playerTwo, i)) {
+                printMessage3(playerTwo, i);
+                break;
+            }
         }
+
+        showPlayerNums(playerOne, i);
+        showPlayerNums(playerTwo, i);
     }
 
-    public void comparesNum(Player player, int i) {
-        System.out.print(playerOne.getName() + " введите число: ");
-        playerOne.setEnteredNum(scanner.nextInt(), i - 1);
-        num = playerOne.getEnteredNums(i)[i - 1];
+    public boolean comparesNum(Player player, int i) {
+        System.out.print(player.getName() + " введите число: ");
+        player.setEnteredNum(scanner.nextInt(), i - 1);
+
+        int num = player.getEnteredNums(i)[i - 1];
         if (num > randomNum) {
-            playerOne.tryCountDecrement();
-            printMessage1(playerOne);
+            player.tryCountDecrement();
+            printMessage1(player);
         } else if (num < randomNum) {
-            playerOne.tryCountDecrement();
-            printMessage2(playerOne);
+            player.tryCountDecrement();
+            printMessage2(player);
         } else {
-            printMessage3(playerOne, i);
-            break;
+            return true;
         }
+        return false;
     }
 
     public void printMessage1(Player player) {
@@ -57,7 +64,7 @@ public class GuessNumber {
 
     public void showPlayerNums(Player player, int i) {
         System.out.print("Введенные числа игрока - " + player.getName() + ": ");
-        for (int playerNum : player.getEnteredNums(i)) {
+        for (int playerNum : player.getEnteredNums(i - 1)) {
             System.out.print(playerNum + " ");
         }
         System.out.println(" ");
