@@ -1,1 +1,1 @@
-**Интенсив StartJava — программирование на Java от [TopJava](https://topjava.ru/)**
+**Homework assignments from the start java course from [TopJava](https://topjava.ru/)**
